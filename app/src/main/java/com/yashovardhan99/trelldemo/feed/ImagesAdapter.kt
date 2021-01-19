@@ -6,6 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.yashovardhan99.trelldemo.R
 import com.yashovardhan99.trelldemo.databinding.CardImageBinding
 
 class ImagesAdapter : PagingDataAdapter<Image, ImagesAdapter.ImageViewHolder>(ImageDiffUtils()) {
@@ -16,6 +17,7 @@ class ImagesAdapter : PagingDataAdapter<Image, ImagesAdapter.ImageViewHolder>(Im
             binding.image = image
             binding.imageView.load(image?.downloadUrl) {
                 crossfade(true)
+                placeholder(R.drawable.image_placeholder)
             }
         }
 
