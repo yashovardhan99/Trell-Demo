@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feed"
-        android:name="com.yashovardhan99.trelldemo.FeedFragment"
+        android:name="com.yashovardhan99.trelldemo.feed.FeedFragment"
         android:label="FeedFragment"
         tools:layout="@layout/fragment_feed" />
     <fragment

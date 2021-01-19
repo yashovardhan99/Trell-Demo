@@ -71,5 +71,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation "io.coil-kt:coil:1.1.1"
-    implementation 'com.squareup.retrofit2:retrofit:1.6.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation "com.squareup.retrofit2:converter-gson:2.7.2"
+    implementation "com.squareup.retrofit2:retrofit-mock:2.7.2"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.0.0"
 }
