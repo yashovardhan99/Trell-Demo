@@ -2,4 +2,6 @@
     <string name="app_name">Trell Demo</string>
     <string name="feed">Feed</string>
     <string name="profile">Profile</string>
+    <string name="_10k_followes">10k followes</string>
+    <string name="follow">Follow</string>
 </resources>
