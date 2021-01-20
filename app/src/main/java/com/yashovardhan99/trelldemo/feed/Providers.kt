@@ -31,3 +31,25 @@ object ImageServiceProvider {
             .create(ImageService::class.java)
     }
 }
+
+@Module
+@InstallIn(SingletonComponent::class)
+object UserServiceProvider {
+    private val logger =
+        HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
+    private const val BASE_URL = "https://randomuser.me/"
+    private val client = OkHttpClient.Builder()
+        .addInterceptor(logger)
+        .build()
+
+    @Provides
+    @Singleton
+    fun provideUsersService(): UsersService {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(UsersService::class.java)
+    }
+}

@@ -15,7 +15,7 @@ import timber.log.Timber
 
 @AndroidEntryPoint
 class FeedFragment : Fragment() {
-    val viewModel: FeedViewModel by viewModels()
+    private val viewModel: FeedViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,6 +30,11 @@ class FeedFragment : Fragment() {
             viewModel.images.collect { pagedData ->
                 Timber.d("Data = $pagedData")
                 imagesAdapter.submitData(pagedData)
+            }
+        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.users.collect { users ->
+                Timber.d("Users = $users")
             }
         }
         return binding.root
