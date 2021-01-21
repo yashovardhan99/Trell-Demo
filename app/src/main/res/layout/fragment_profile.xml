@@ -1,188 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
 
-    <ScrollView
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="25dp"
-                android:text="Kanishk Mendiratta"
-                android:textColor="@color/black"
-                android:textSize="25dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:text="kanishkmendiratta"
-                app:layout_constraintBottom_toBottomOf="@+id/cardView"
-                app:layout_constraintStart_toStartOf="@+id/textView" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="25dp"
-                app:cardCornerRadius="100dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <ImageView
-                    android:id="@+id/imageView"
+                <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:srcCompat="@tools:sample/avatars" />
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:id="@+id/postsNum"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:text="6"
-                android:textSize="25dp"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardView"/>
-            <TextView
-                android:id="@+id/FollowersNum"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:text="464"
-                android:textSize="25dp"
-                android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@id/postsNum"
-                app:layout_constraintTop_toBottomOf="@id/cardView"/>
-            <TextView
-                android:id="@+id/followingNum"
-                android:layout_width="75dp"
-                android:textSize="25dp"
-                android:textColor="@color/black"
-                android:layout_height="wrap_content"
-                android:text="4"
-                app:layout_constraintStart_toEndOf="@id/FollowersNum"
-                app:layout_constraintTop_toBottomOf="@id/cardView"/>
-
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:id="@+id/postsText"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:text="Posts"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/postsNum"/>
-            <TextView
-                android:id="@+id/FollowersText"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:text="Followers"
-                app:layout_constraintStart_toEndOf="@id/postsText"
-                app:layout_constraintTop_toBottomOf="@id/postsNum"/>
-            <TextView
-                android:id="@+id/followingText"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content"
-                android:text="Following"
-                app:layout_constraintStart_toEndOf="@id/FollowersText"
-                app:layout_constraintTop_toBottomOf="@id/postsNum"/>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView1"
-                android:layout_width="140dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="25dp"
-                app:cardBackgroundColor="#25D366"
-                app:cardCornerRadius="80dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardView">
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Kanishk Mendiratta"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Invite Friends"
-                    android:textColor="@color/white" />
+                    android:layout_marginBottom="20dp"
+                    android:text="kanishkmendiratta"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                    app:layout_constraintStart_toStartOf="@+id/textView" />
 
-            </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="25dp"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:background="#E0BBE4"
-                app:layout_constraintTop_toBottomOf="@+id/cardView1">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:srcCompat="@tools:sample/avatars" />
+                </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="25dp"
-                    android:text="Creator Insights!"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/postsNum"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    android:textSize="25dp"
                     android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:padding="20dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/rightarrow" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFE4C4"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+                    app:layout_constraintTop_toBottomOf="@id/cardView" />
 
                 <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="25dp"
-                    android:text="Creator Tutorial!"
+                    android:id="@+id/FollowersNum"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="464"
+                    android:textSize="25dp"
                     android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                    app:layout_constraintStart_toEndOf="@id/postsNum"
+                    app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+                <TextView
+                    android:id="@+id/followingNum"
+                    android:layout_width="75dp"
+                    android:textSize="25dp"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    app:layout_constraintStart_toEndOf="@id/FollowersNum"
+                    app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/postsText"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="Posts"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/postsNum" />
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:padding="20dp"
+                <TextView
+                    android:id="@+id/FollowersText"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="Followers"
+                    app:layout_constraintStart_toEndOf="@id/postsText"
+                    app:layout_constraintTop_toBottomOf="@id/postsNum" />
+
+                <TextView
+                    android:id="@+id/followingText"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:text="Following"
+                    app:layout_constraintStart_toEndOf="@id/FollowersText"
+                    app:layout_constraintTop_toBottomOf="@id/postsNum" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView1"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="25dp"
+                    app:cardBackgroundColor="#25D366"
+                    app:cardCornerRadius="80dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/rightarrow" />
+                    app:layout_constraintTop_toBottomOf="@id/cardView">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Invite Friends"
+                        android:textColor="@color/white" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="#E0BBE4"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="25dp"
+                        android:text="Creator Insights!"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:padding="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/rightarrow" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFE4C4"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="25dp"
+                        android:text="Creator Tutorial!"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:padding="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/rightarrow" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
