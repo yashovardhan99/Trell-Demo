@@ -4,4 +4,5 @@
     <string name="profile">Profile</string>
     <string name="_10k_followes">10k followes</string>
     <string name="follow">Follow</string>
+    <string name="random_image_url">https://picsum.photos/500/100</string>
 </resources>

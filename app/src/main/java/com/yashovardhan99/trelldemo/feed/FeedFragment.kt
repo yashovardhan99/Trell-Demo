@@ -25,16 +25,18 @@ class FeedFragment : Fragment() {
     ): View {
         val binding = FragmentFeedBinding.inflate(inflater, container, false)
         val imagesAdapter = ImagesAdapter()
+        val bannerAdapter = BannerAdapter(requireActivity())
         val usersAdapter = UserAdapter {
             Toast.makeText(context, "Followed: ${it.name}", Toast.LENGTH_LONG).show()
         }
         val userHolderAdapter = UserHolderAdapter(usersAdapter)
-        binding.feedRecycler.adapter = ConcatAdapter(userHolderAdapter, imagesAdapter)
+        binding.feedRecycler.adapter =
+            ConcatAdapter(userHolderAdapter, bannerAdapter, imagesAdapter)
         binding.feedRecycler.layoutManager =
             GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false).apply {
                 spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int): Int {
-                        return if (position == 0) 2
+                        return if (position <= 1) 2
                         else 1
                     }
                 }
