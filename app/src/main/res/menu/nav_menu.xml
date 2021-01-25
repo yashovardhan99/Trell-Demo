@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Select Language">
+    </item>
+    <item android:title="Invite Friends">
+    </item>
+    <item android:title="Rate Trell">
+    </item>
+    <item android:title="Edit Profile">
+    </item>
+    <item android:title="Notification Settings">
+    </item>
+    <item android:title="Feedback">
+    </item>
+    <item android:title="Saved">
+    </item>
+</menu>

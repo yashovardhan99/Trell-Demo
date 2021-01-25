@@ -5,4 +5,6 @@
     <string name="_10k_followes">10k followes</string>
     <string name="follow">Follow</string>
     <string name="random_image_url">https://picsum.photos/500/100</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
