@@ -31,8 +31,6 @@ import timber.log.Timber
 @AndroidEntryPoint
 class ProfileFragment : Fragment() {
     private val viewModel: ProfileViewModel by viewModels()
-    var allImages : List<ImageInfo> = emptyList()
-    var savedImages : List<ImageInfo> = emptyList()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,97 +45,29 @@ class ProfileFragment : Fragment() {
 
         binding.profileRecycler.layoutManager=
             GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
-        showAll(binding)
+
+        viewModel.showAll(binding)
 
         binding.allTrails.setOnClickListener(View.OnClickListener {
-            showAll(binding)
+            viewModel.showAll(binding)
         })
 
         binding.savedTrails.setOnClickListener(View.OnClickListener {
-            showSaved(binding)
+            viewModel.showSaved(binding)
         })
 
         binding.constraintLayout.setOnClickListener(View.OnClickListener {
-            val intent = Intent(context,WebViewClass::class.java)
-            startActivity(intent)
+            viewModel.goToWebView(context)
         })
 
         binding.v1.setOnClickListener(View.OnClickListener {
-            val intent = Intent(context,WebViewClass::class.java)
-            startActivity(intent)
+            viewModel.goToWebView(context)
         })
 
         binding.cardView1.setOnClickListener(View.OnClickListener {
-            ShareCompat.IntentBuilder.from(activity as MainActivity).setType("text/plain")
-                .setChooserTitle("Trell")
-                .setText("Hey there! Join me on the Trell app to watch and create vlogs on travel, food, fashion & moview reviews."+"\nhttps://play.google.com/store/apps/details?id=app.trell")
-                .startChooser();
+            viewModel.invite(activity as MainActivity)
         })
 
         return binding.root
-    }
-
-    fun showAll(binding: FragmentProfileBinding){
-        binding.u2.visibility = View.GONE;
-        binding.u1.visibility = View.VISIBLE;
-        if(!allImages.isEmpty()){
-            val adapter = ImagesViewAdapter(allImages)
-
-            binding.profileRecycler.adapter=adapter;
-        }
-        else{
-            val request = ImageServiceProvider.provideImageService();
-            val callAllImages = request.getImages1(2,10);
-            callAllImages.enqueue(object : Callback<List<ImageInfo>> {
-                override fun onFailure(call: Call<List<ImageInfo>>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-                override fun onResponse(
-                    call: Call<List<ImageInfo>>,
-                    response: Response<List<ImageInfo>>
-                ) {
-                    if (response.isSuccessful){
-                        allImages = response.body() as List<ImageInfo>
-                        val adapter = ImagesViewAdapter(allImages)
-
-                        binding.profileRecycler.adapter=adapter;
-                    }
-                }
-
-            })
-        }
-    }
-
-    fun showSaved(binding: FragmentProfileBinding){
-        binding.u1.visibility = View.GONE;
-        binding.u2.visibility = View.VISIBLE;
-        if(!savedImages.isEmpty()){
-            val adapter = ImagesViewAdapter(savedImages)
-
-            binding.profileRecycler.adapter=adapter;
-        }
-        else{
-            val request = ImageServiceProvider.provideImageService();
-            val callSavedImages = request.getImages1(3,10);
-            callSavedImages.enqueue(object : Callback<List<ImageInfo>> {
-                override fun onFailure(call: Call<List<ImageInfo>>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-                override fun onResponse(
-                    call: Call<List<ImageInfo>>,
-                    response: Response<List<ImageInfo>>
-                ) {
-                    if (response.isSuccessful){
-                        savedImages = response.body() as List<ImageInfo>
-                        val adapter = ImagesViewAdapter(savedImages)
-
-                        binding.profileRecycler.adapter=adapter;
-                    }
-                }
-
-            })
-        }
     }
 }
